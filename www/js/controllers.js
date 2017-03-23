@@ -99,8 +99,18 @@ $scope.saveData = function(person){
     $scope.showAlert('Failure', error.statusText);
   })
 };
-    $scope.retrieveData = function(){
-    };
+  $scope.retrieveData = function(){
+    $ionicLoading.show({
+      template: 'Retrieving data...'
+    });
+    performanceData.query({}, function(response){
+      $state.go('app.data', {savedDataCollection: response.entries});
+      $ionicLoading.hide();
+    }, function(error){
+      $ionicLoading.hide();
+      $scope.showAlert('Failure', error.statusText);
+    })
+};
 
     $scope.showAlert = function(message, content) {
     var alertPopup = $ionicPopup.alert({
@@ -110,4 +120,10 @@ $scope.saveData = function(person){
     alertPopup.then(function(res) {
     });
   };
+})
+
+.controller('DataCtrl', function($scope, $stateParams){
+  $scope.$on('$ionicView.enter', function () {
+    $scope.savedDataCollection = $stateParams.savedDataCollection;
+  });
 });
