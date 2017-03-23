@@ -65,14 +65,14 @@ angular.module('starter.controllers', [])
 .controller('TestController', function($scope) {
   $scope.gender = ['Male', 'Female']
   $scope.ageValues = {
-    min: 20,
-    max: 60,
-    value: 20
+                      min: 20,
+                      max: 60,
+                      value: 20
   };
   $scope.distanceValues = {
-    min: 1000,
-    max: 3500,
-    value: 1000
+                          min: 1000,
+                          max: 3500,
+                          value: 1000
   };
   $scope.data = {};
   $scope.calculateCooper = function() {
@@ -84,4 +84,17 @@ angular.module('starter.controllers', [])
     $scope.person = person;
     console.log($scope.person)
   };
+})
+
+  .controller('PerformanceCtrl', function($scope, performanceData){
+    $scope.saveData = function(person){
+      data = {performance_data: {data: {message: person.cooperMessage}}}
+      performanceData.save(data, function(response){
+        console.log(response);
+  },      function(error){
+        console.log(error);
+      })
+    };
+    $scope.retrieveData = function(){
+    };
 });
