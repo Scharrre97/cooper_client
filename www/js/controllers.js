@@ -1,7 +1,11 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
+.controller('AppCtrl', function ($rootScope,
+                                 $scope,
+                                 $ionicModal,
+                                 $timeout,
+                                 $auth,
+                                 $ionicLoading) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -31,14 +35,23 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function () {
-  $auth.submitLogin($scope.loginData)
-    .then(function (resp) {
-      // handle success response
-      $scope.closeLogin();
-    })
-    .catch(function (error) {
-      // handle error response
-      $scope.errorMessage = error;
+      $ionicLoading.show({
+        template: 'Logging in...'
+      });
+      $auth.submitLogin($scope.loginData)
+        .then(function (resp) {
+          // handle success response
+          $ionicLoading.hide();
+          $scope.closeLogin();
+        })
+        .catch(function (error) {
+          $ionicLoading.hide();
+          $scope.errorMessage = error;
+  });
+
+
+    $rootScope.$on('auth:login-success', function(ev, user) {
+      $scope.currentUser = user;
     });
 
     // Simulate a login delay. Remove this and replace with your login

@@ -5,14 +5,14 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ng-token-auth'])
-    .constant('API_URL', 'https://ca-cooper-api.herokuapp.com/api/v1')
+    .constant('API_URL', 'https://jsz-cooper-api.herokuapp.com/api/v1')
 
     .config(function ($authProvider, API_URL) {
     $authProvider.configure({
       apiUrl: API_URL
     });
   })
-  
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
