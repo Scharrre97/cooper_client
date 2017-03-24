@@ -1,1 +1,11 @@
-/* Empty. Add your own CSS if you like */
+ion-content {
+  /*background: -webkit-linear-gradient(#8ff08f, #549f54, #093f09);*/
+  /*background: -o-linear-gradient(#8ff08f, #549f54, #093f09);*/
+  /*background: -moz-linear-gradient(#8ff08f, #549f54, #093f09);*/
+  /*background: linear-gradient(#8ff08f, #549f54, #093f09);*/
+
+  background: -webkit-linear-gradient(#71CED1, #384784, #71CED1);
+  background: -o-linear-gradient(#71CED1, #384784, #71CED1);
+  background: -moz-linear-gradient(#71CED1, #384784, #71CED1);
+  background: linear-gradient(#71CED1, #384784, #71CED1);
+}
