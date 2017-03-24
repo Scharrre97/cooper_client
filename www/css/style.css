@@ -1,11 +1,21 @@
 ion-content {
-  /*background: -webkit-linear-gradient(#8ff08f, #549f54, #093f09);*/
-  /*background: -o-linear-gradient(#8ff08f, #549f54, #093f09);*/
-  /*background: -moz-linear-gradient(#8ff08f, #549f54, #093f09);*/
-  /*background: linear-gradient(#8ff08f, #549f54, #093f09);*/
+  background: -webkit-linear-gradient(#8ff08f, #549f54, #093f09);
+  background: -o-linear-gradient(#8ff08f, #549f54, #093f09);
+  background: -moz-linear-gradient(#8ff08f, #549f54, #093f09);
+  background: linear-gradient(#8ff08f, #549f54, #093f09);
+}
 
-  background: -webkit-linear-gradient(#71CED1, #384784, #71CED1);
-  background: -o-linear-gradient(#71CED1, #384784, #71CED1);
-  background: -moz-linear-gradient(#71CED1, #384784, #71CED1);
-  background: linear-gradient(#71CED1, #384784, #71CED1);
+.button-johan {
+  background-color: #0c3f09;
+  color: white;
+}
+
+.col-col {
+  font-family: rockwell;
+  font-size: 22px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  color: dimgrey;
 }
