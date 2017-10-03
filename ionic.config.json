@@ -1,0 +1,12 @@
+{
+  "name": "cooper_client",
+  "app_id": "e813fa2c",
+  "integrations": {},
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}
